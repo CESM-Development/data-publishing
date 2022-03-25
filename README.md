@@ -10,11 +10,15 @@ This repository includes scripts for publishing data which were originally creat
 4. You will also need to get an API token from Climate Data Gateway and put it in your home directory under`*********`.
 ### Editing configuration files
 1. Begin by editing `env.sh`. This file should include the following lines, with the shortname altered as needed:
-      ```export ESGINI=/usr/local/esg-publisher-config/CESM/LE/<shortname>/esg-le.ini
-      export ESGCESMINI=/usr/local/esg-publisher-config/CESM/LE/<shortname>/esg-le.CESM.ini```
+      ```
+      export ESGINI=/usr/local/esg-publisher-config/CESM/LE/<shortname>/esg-le.ini
+      export ESGCESMINI=/usr/local/esg-publisher-config/CESM/LE/<shortname>/esg-le.CESM.ini
+      ```
 2. Next, edit `esg-le.ini` with a tool such as `vi`. Include any missing passwords or secrets (you can reach out to CISL, Eric Nienhouse, or Teagan King for this information). If you need to include a new project, it can be done by changing `project_options`. One can add additional `thredds_dataset_roots` which can help minimize warnings to the console when running publishing scripts. Most of the information in this file should remain constant.
 3. After editing the general configuration file, we can edit the project-specific configuration file, eg `esg-le.CESM.ini`. Be sure that the `project` matches the name that you expect, and the `experiment` matches a shortname given to the specific project you are publishing. The `dataset_id` should follow the format `ucar.cgd.cesm1.<specific_project_name>.%(submodel)s.%(product)s.%(time_frequency)s.%(myvar)s`. The directory_format should be the filepath to the data followed by `%(submodel)s/%(product)s/tseries/%(time_frequency_short)s/`. `experiment_options` should include the project-specific short name (twice).
 4. Once the configuration files have been loaded, run `source env.sh`. If you log out before finishing publishing, you may need to do this again to make sure `$ESGINI` and `$ESGCESMINI` are recognized.
+
+### Create a new project, if needed
 
 ### Create variable lists for components. 
 1. Edit `ext_comp_freq_vars.sh` for filepath, base dataset ID, and frequency matching string
