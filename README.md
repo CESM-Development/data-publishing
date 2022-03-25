@@ -56,3 +56,7 @@ Note that these steps take a while, and must be done in order for each dataset, 
 `sh curl_delete_atm6h.sh`
 3. Republish with all three publishing steps listed above if desired.
 
+## Close DASH request
+1. Include the DOI in the `description` field.
+2. Click `info recorded in description`, which will change the ticket status to `Closed`.
+
