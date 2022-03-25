@@ -1,9 +1,8 @@
 # data-publishing
-This repository includes scripts for publishing data which were originally created by Ilana Stern. It is currently under heavy development.
+This repository includes scripts for publishing data which were originally created by Ilana Stern. It is currently under heavy development. Much of the information in this document and supporting scripts were also created by Eric Nienhouse.
 
 
-
-## Publishing Data
+## Steps for Publishing Data:
 ### Setup
 1. It is useful to begin by creating a repository with a recognizable short name in which to include the configuration files. It may be useful to locate this repository on the sagepubprod2 machine within `/usr/local/esg-publisher-config/CESM/LE/`.
 2. It may be useful to create aliases to change directories into both the dataset repository and the publishing configuration repository. To do this, create a .aliases file in the home directory, include lines such as `alias shortname_config='cd /usr/local/esg-publisher-config/CESM/LE/<shortname>'` and `alias shortname_dataset='cd /glade/campaign/<dataset>'`.
@@ -24,15 +23,32 @@ This repository includes scripts for publishing data which were originally creat
 ### Create mapfiles
 1. Make a new directory within your configuration directory called `mapfiles`.
 2. Edit `scan_comp_freqdir_freq_var.sh` for path and dataset ID.
-3. Run `scan_<component><frequency>.sh` files to generate the checksums and create mapfiles. If it is an urgent request, you can turn off the checksums in the configuration file, but it is best to do this during this time if possible, as it may require re-doing steps if you do checksums later.
+3. Run `scan_<component><frequency>.sh` files to generate the checksums and create mapfiles. If it is an urgent request, you can turn off the checksums in the configuration file, but it is best to do this during this time if possible, as it may require re-doing steps if you do checksums later. Note that the scan step takes a while, but can be run simultaneously for various components in multiple terminal windows.
 4. Concatenate all mapfiles into single mapfile by going into the `mapfiles` directory and running `cat ucar.cgd.cesm2.<specific_dataset_name>.<component>.proc.<freq>_ave.*.txt > ../ucar.cgd.cesm2.<specific_dataset_name>.<component>.proc.<freq>_ave.xx.txt`.
 
-### Register with Publisher
+### Once configuration is set up, you are ready to publish the dataset
+Note that these steps take a while, and must be done in order for each dataset, but can be run simultaneously for various components in multiple terminal windows. It may be useful to run all three commands in a script for each component.
+1. Register with Publisher: This step makes sure that the publisher recognizes the dataset and is ready for publishing.
 `esgpublish --offline --project CESM --parent ucar.cgd.cesm2.smyle.atm.proc.monthly_ave --map ucar.cgd.cesm2.smyle.atm.proc.monthly_ave.xx.txt`
-### Publish to THREDDS
+2. Publish to THREDDS: This step publishes to the THREDDS database and must be done before publishing to the gateway.
 `esgpublish --offline --noscan --project CESM --parent ucar.cgd.cesm2.smyle.atm.proc.monthly_ave --map ucar.cgd.cesm2.smyle.atm.proc.monthly_ave.xx.txt --thredds  --service fileService`
-### Publish to Gateway
+3. Publish to Gateway: This step publishes to Climate Data Gateway, where the dataset is visible in the user interface.
 `esgpublish --offline --noscan --project CESM --parent ucar.cgd.cesm2.smyle.atm.proc.monthly_ave --map ucar.cgd.cesm2.smyle.atm.proc.monthly_ave.xx.txt --publish`
 
+### Make adjustments and add metadata on the Gateway
+1. The files may be put in lexical order with capital letters first and lowercase letters second. You can reorder these alphabetically by hand by clicking the `Edit` tab and `Order Datasets`. It may help to zoom out for faster scrolling and use `Ctrl-F` to mark where similar datasets need to be moved to.
+2. Add the DOI, author information, and project description.
+3. Grant access to the PI for reviewing a dataset by going to the parent dataset, clicking the `Edit` tab, then `Set User Permissions`, and granting read access. 
+4. Once the PI has reviewed the dataset and any changes have been made, publish by clicking `Edit`, `Change Published State`, and setting the dataset to `Published`.
 
-## Unpublishing Data
+### Include additional metadata for DASH Search
+
+## Steps for Unpublishing/Republishing Data:
+1. Unpublish the data from Climate Data Gateway.
+`esgunpublish --database-delete --map ucar.cgd.cesm2.smyle.atm.proc.6hourly_ave.xx.txt --project CESM`
+2. Create a list of all of the dataset ID's to delete, and then delete with a curl script `*****`. This fully deletes the dataset.
+`awk '{print $1}' ucar.cgd.cesm2.smyle.atm.proc.6hourly_ave.xx.txt | uniq > delete_list_atm6h.txt`
+`sh delete_from_list.sh delete_list_atm6h.txt > curl_delete_atm6h.sh`
+`sh curl_delete_atm6h.sh`
+3. Republish with all three publishing steps listed above if desired.
+
