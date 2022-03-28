@@ -60,3 +60,8 @@ iii. `sh curl_delete_atm6h.sh`
 1. Include the DOI in the `description` field.
 2. Click `info recorded in description`, which will change the ticket status to `Closed`.
 
+## Common Errors / FAQ's
+1. There's a 404 error on Climate Data Gateway netcdf headers when click `view`; what do I do?
+There may be an issue with the filepath (eg, make sure your project specific config file points to `/datazone` instead of `/glade`). Try unpublishing and republishing.
+2. The project does not have an option to share with the PI. 
+Try temporarily adding PI as having view permissions on parent dataset.
