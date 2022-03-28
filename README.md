@@ -6,8 +6,8 @@ This repository includes scripts for publishing data which were originally creat
 ### Setup
 1. It is useful to begin by creating a repository with a recognizable short name in which to include the configuration files. It may be useful to locate this repository on the sagepubprod2 machine within `/usr/local/esg-publisher-config/CESM/LE/`.
 2. It may be useful to create aliases to change directories into both the dataset repository and the publishing configuration repository. To do this, create a .aliases file in the home directory, include lines such as `alias shortname_config='cd /usr/local/esg-publisher-config/CESM/LE/<shortname>'` and `alias shortname_dataset='cd /glade/campaign/<dataset>'`.
-3. It is recommended that users clone this repository `********` into the configuration repository for the dataset being published.
-4. You will also need to get an API token from Climate Data Gateway and put it in your home directory under`*********`.
+3. It is recommended that users clone the `scripts` repository into the configuration repository for the dataset being published.
+4. You will also need to get an API token from Climate Data Gateway and put it in your home directory under`~/.gateway-auth/api_token`.
 ### Editing configuration files
 1. Begin by editing `env.sh`. This file should include the following lines, with the shortname altered as needed:
       ```
@@ -50,10 +50,10 @@ Note that these steps take a while, and must be done in order for each dataset, 
 ## Steps for Unpublishing/Republishing Data:
 1. Unpublish the data from Climate Data Gateway.
 `esgunpublish --database-delete --map ucar.cgd.cesm2.smyle.atm.proc.6hourly_ave.xx.txt --project CESM`
-2. Create a list of all of the dataset ID's to delete, and then delete with a curl script `*****`. This fully deletes the dataset.
-`awk '{print $1}' ucar.cgd.cesm2.smyle.atm.proc.6hourly_ave.xx.txt | uniq > delete_list_atm6h.txt`
-`sh delete_from_list.sh delete_list_atm6h.txt > curl_delete_atm6h.sh`
-`sh curl_delete_atm6h.sh`
+2. Create a list of all of the dataset ID's to delete (part `i`), and then delete with a curl script that is created is part `ii` by running the command in part `iii`. This fully deletes the dataset.
+i. `awk '{print $1}' ucar.cgd.cesm2.smyle.atm.proc.6hourly_ave.xx.txt | uniq > delete_list_atm6h.txt`
+ii. `sh delete_from_list.sh delete_list_atm6h.txt > curl_delete_atm6h.sh`
+iii. `sh curl_delete_atm6h.sh`
 3. Republish with all three publishing steps listed above if desired.
 
 ## Close DASH request
