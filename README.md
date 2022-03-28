@@ -6,7 +6,7 @@ This repository includes scripts for publishing data which were originally creat
 ### Setup
 1. It is useful to begin by creating a repository with a recognizable short name in which to include the configuration files. It may be useful to locate this repository on the sagepubprod2 machine within `/usr/local/esg-publisher-config/CESM/LE/`.
 2. It may be useful to create aliases to change directories into both the dataset repository and the publishing configuration repository. To do this, create a .aliases file in the home directory, include lines such as `alias shortname_config='cd /usr/local/esg-publisher-config/CESM/LE/<shortname>'` and `alias shortname_dataset='cd /glade/campaign/<dataset>'`.
-3. It is recommended that users clone the `scripts` repository into the configuration repository for the dataset being published.
+3. It is recommended that users clone this repository into the configuration repository for the dataset being published in order to obtain template scripts and configuration files.
 4. You will also need to get an API token from Climate Data Gateway and put it in your home directory under`~/.gateway-auth/api_token`.
 ### Editing configuration files
 1. Begin by editing `env.sh`. This file should include the following lines, with the shortname altered as needed:
