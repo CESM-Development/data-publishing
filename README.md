@@ -1,12 +1,12 @@
 # data-publishing
-## These scripts are for use by the NCAR data publishing team. If you are a PI who would like to publish a dataset on Climate Data Gateway, please submit a [DASH ticket]{https://ithelp.ucar.edu/plugins/servlet/desk/site/dash}.
+## These scripts are for use by the NCAR data publishing team. If you are a PI who would like to publish a dataset on Climate Data Gateway, please submit a [DASH ticket](https://ithelp.ucar.edu/plugins/servlet/desk/site/dash).
 
 This repository includes scripts for publishing data which were originally created by Ilana Stern. It is currently under heavy development. Much of the information in this document and supporting scripts were also created by Eric Nienhouse.
 
 
 ## Steps for Publishing Data:
 ### Create Dataset on Climate Data Gateway
-1. Navigate to the [Climate Data Gateway]{https://www.earthsystemgrid.org/}, select a relevant model output type, and create a new child dataset by clicking on the `Edit` tab and then selecting `Create New Child Dataset`. The shortname should be something like `ucar.cgd.<model>.<experiment>` and the longname can be the title of the experiment.
+1. Navigate to the [Climate Data Gateway](https://www.earthsystemgrid.org/), select a relevant model output type, and create a new child dataset by clicking on the `Edit` tab and then selecting `Create New Child Dataset`. The shortname should be something like `ucar.cgd.<model>.<experiment>` and the longname can be the title of the experiment.
 2. Include description, authors, and DOI in the project description.
 3. Create child datasets for each component/frequency pair. These can have a long name such as `<model> <experiment> <component> Post Processed Data <frequency> Averages` and a short name such as `ucar.cgd.<model>.<experiment>.<component>.proc.<freq>_ave`
 
