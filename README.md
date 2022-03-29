@@ -3,6 +3,11 @@ This repository includes scripts for publishing data which were originally creat
 
 
 ## Steps for Publishing Data:
+### Create Dataset on Climate Data Gateway
+1. Navigate to the [Climate Data Gateway]{https://www.earthsystemgrid.org/}, select a relevant model output type, and create a new child dataset by clicking on the `Edit` tab and then selecting `Create New Child Dataset`. The shortname should be something like `ucar.cgd.<model>.<experiment>` and the longname can be the title of the experiment.
+2. Include description, authors, and DOI in the project description.
+3. Create child datasets for each component/frequency pair. These can have a long name such as `<model> <experiment> <component> Post Processed Data <frequency> Averages` and a short name such as `ucar.cgd.<model>.<experiment>.<component>.proc.<freq>_ave`
+
 ### Setup
 1. It is useful to begin by creating a repository with a recognizable short name in which to include the configuration files. It may be useful to locate this repository on the sagepubprod2 machine within `/usr/local/esg-publisher-config/CESM/LE/`.
 2. It may be useful to create aliases to change directories into both the dataset repository and the publishing configuration repository. To do this, create a .aliases file in the home directory, include lines such as `alias shortname_config='cd /usr/local/esg-publisher-config/CESM/LE/<shortname>'` and `alias shortname_dataset='cd /glade/campaign/<dataset>'`.
