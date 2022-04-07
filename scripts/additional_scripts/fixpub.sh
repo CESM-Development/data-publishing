@@ -1,6 +1,8 @@
+# This script provides methods to fix particular atmospheric daily variables for an example CCSM4 project.
+
 export ESGINI=/usr/local/esg-publisher-config/CCSM4/esg.ini
 export ESGCCSMINI=/usr/local/esg-publisher-config/CCSM4/NCAR/LE/esg-le.CCSM.ini
-#
+
 for var in `cat fixvars_atmd`
 do
   echo "doing $var"
