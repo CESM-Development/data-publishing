@@ -1,3 +1,5 @@
+# This script is an example large ensemble directory scan script for monthly atmospheric data
+
 export ESGINI=/usr/local/esg-publisher-config/esg-le.ini
 for var in `cat mevars_atmm` 
 do
