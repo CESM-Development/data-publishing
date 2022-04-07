@@ -1,6 +1,6 @@
 # /glade/campaign/cesm/development/espwg/SMYLE/archive/
 
-# Note: these should be uncommented one frequency at a time (in alignment with the uncommented bit
+# Note: these lines should be uncommented one frequency at a time (in alignment with the uncommented bit
 # of ext_comp_freq_vars.sh) in order to run. Replace with the required components.
 
 #year_1
