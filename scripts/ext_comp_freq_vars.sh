@@ -1,3 +1,4 @@
+# This script extracts the variables for a particular component and frequency.
 # replace path with relevant data directory and uncomment relevant section when running dovars.sh for a particular frequency
 
 comp=$1
