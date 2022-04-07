@@ -1,3 +1,5 @@
+# This script provides methods for fixing scans of an example CCSM4 atmospheric daily dataset.
+
 export ESGINI=/usr/local/esg-publisher-config/CCSM4/esg.ini
 export ESGCCSMINI=/usr/local/esg-publisher-config/CCSM4/NCAR/LE/esg-le.CCSM.ini
 rm fix.cesmLME.atm.proc.daily_ave.*.txt
