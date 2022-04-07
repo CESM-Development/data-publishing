@@ -1,3 +1,5 @@
+# This script provides methods to unpublish datasets. Note that the datasets must also be deleted after unpublishing to fully remove from thredds.
+
 export ESGINI=/usr/local/esg-publisher-config/CCSM4/NCAR/LE/esg-le.ini
   echo "doing rof.proc.monthly_ave"
   esgpublish --map unpub_rof.proc.monthly_ave.txt --update --project CCSM  --offline --per-variable --parent ucar.cgd.ccsm4.CESM_CAM5_BGC_LE.rof.proc.monthly_ave
