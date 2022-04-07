@@ -29,7 +29,7 @@ This repository includes scripts for publishing data which were originally creat
 
 ### Create variable lists for components. 
 1. Edit `ext_comp_freq_vars.sh` for filepath, base dataset ID, and frequency matching string
-2. Run `dovars.sh`. This will generate files named `levars_*` containing all of the variables for each component/frequency pair. If the file includes additional filepaths, check that your configuration filepaths are correct.
+2. Run `create_vars.sh`. This will generate files named `levars_*` containing all of the variables for each component/frequency pair. If the file includes additional filepaths, check that your configuration filepaths are correct.
 
 ### Create mapfiles
 1. Make a new directory within your configuration directory called `mapfiles`.
