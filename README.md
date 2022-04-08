@@ -61,11 +61,11 @@ Note that these steps take a while, and must be done in order for each dataset, 
 2. Create a list of all of the dataset ID's to delete (part `i`), and then delete with a curl script that is created is part `ii` by running the command in part `iii`. This fully deletes the dataset.
 
 
-i. `awk '{print $1}' ucar.cgd.cesm2.smyle.atm.proc.6hourly_ave.xx.txt | uniq > delete_list_atm6h.txt`
+     i. `awk '{print $1}' ucar.cgd.cesm2.smyle.atm.proc.6hourly_ave.xx.txt | uniq > delete_list_atm6h.txt`
 
-ii. `sh delete_from_list.sh delete_list_atm6h.txt > curl_delete_atm6h.sh`
+     ii. `sh delete_from_list.sh delete_list_atm6h.txt > curl_delete_atm6h.sh`
 
-iii. `sh curl_delete_atm6h.sh`
+     iii. `sh curl_delete_atm6h.sh`
 
 3. Republish with all three publishing steps listed above if desired.
 
