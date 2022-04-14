@@ -27,7 +27,7 @@ This repository includes scripts for publishing data which were originally creat
 
 ### Create a new project, if needed
 1. Navigate to a parent dataset in [Climate Data Gateway](https://www.earthsystemgrid.org/), such as the [CESM2 Model Output](https://www.earthsystemgrid.org/dataset/ucar.cgd.cesm2.output.html).
-2. In the `Edit` tab, `Create New Child Dataset`.
+2. In the `Edit` tab, `Create New Child Dataset`. Fill in the title of dataset and shortname.
 
 ### Create variable lists for components
 1. Edit `ext_comp_freq_vars.sh` for filepath, base dataset ID, and frequency matching string
