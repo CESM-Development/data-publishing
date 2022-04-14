@@ -26,8 +26,10 @@ This repository includes scripts for publishing data which were originally creat
 4. Once the configuration files have been loaded, run `source env.sh`. If you log out before finishing publishing, you may need to do this again to make sure `$ESGINI` and `$ESGCESMINI` are recognized.
 
 ### Create a new project, if needed
+1. Navigate to a parent dataset in [Climate Data Gateway](https://www.earthsystemgrid.org/), such as the [CESM2 Model Output](https://www.earthsystemgrid.org/dataset/ucar.cgd.cesm2.output.html).
+2. In the `Edit` tab, `Create New Child Dataset`.
 
-### Create variable lists for components. 
+### Create variable lists for components
 1. Edit `ext_comp_freq_vars.sh` for filepath, base dataset ID, and frequency matching string
 2. Run `create_vars.sh`. This will generate files named `levars_*` containing all of the variables for each component/frequency pair. If the file includes additional filepaths, check that your configuration filepaths are correct.
 
