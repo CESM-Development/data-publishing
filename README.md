@@ -37,7 +37,7 @@ This repository includes scripts for publishing data which were originally creat
 ### Create mapfiles
 1. Make a new directory within your configuration directory called `mapfiles`.
 2. Edit `scan_comp_freqdir_freq_var.sh` for path and dataset ID.
-3. Duplicate the `scan_<component><frequency>.sh` file for however many component/frequency pairs are needed. Edit the component/frequency listed in each of the files. Note that it may be useful to test with one frequency/component pair before running all of these.
+3. Duplicate the `scan_<component><frequency>.sh` file for however many component/frequency pairs are needed. Edit the component/frequency listed in each of the files. Be sure to edit `comp`, `freqdir`, `freq`, as well as the `levars_<comp><freq>` file listed in the for loop. Note that it may be useful to test with one frequency/component pair before running all of these.
 4. Run `scan_<component><frequency>.sh` files to generate the checksums and create mapfiles. If it is an urgent request, you can turn off the checksums in the configuration file, but it is best to do this during this time if possible, as it may require re-doing steps if you do checksums later. Note that the scan step takes a while, but can be run simultaneously for various components in multiple terminal windows.
 5. Concatenate all mapfiles into single mapfile by going into the `mapfiles` directory and running `cat ucar.cgd.cesm2.<specific_dataset_name>.<component>.proc.<freq>_ave.*.txt > ../ucar.cgd.cesm2.<specific_dataset_name>.<component>.proc.<freq>_ave.xx.txt`.
 
