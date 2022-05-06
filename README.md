@@ -58,7 +58,7 @@ Note that these steps take a while, and must be done in order for each dataset, 
 4. Once the PI has reviewed the dataset and any changes have been made, publish by clicking `Edit`, `Change Published State`, and setting the dataset to `Published`.
 
 ### Include additional metadata for DASH Search
-1. In order to include a dataset in DASH Search, the metadata must include a valid title, description, short name, author, publisher (UCAR/NCAR - Climate and Global Dynamics Laboratory), metadata support contact (esg-support@earthsystemgrid.org), resource support contact (esg-support@earthsystemgrid.org), legal constraints, access constraints, and language. If any of these need to be added, please do so in the Climate Data Gateway user interface.
+1. In order to include a dataset in [DASH Search](https://data.ucar.edu/dataset), the metadata must include a valid title, description, short name, author, publisher (UCAR/NCAR - Climate and Global Dynamics Laboratory), metadata support contact (esg-support@earthsystemgrid.org), resource support contact (esg-support@earthsystemgrid.org), legal constraints, access constraints, and language. If any of these need to be added, please do so in the Climate Data Gateway user interface.
 2. Include GCMD keywords. *****
 3. Add dataset record to DASH search by generating ISO using the following URL: `https://www.earthsystemgrid.org/dataset/<short>.xml?type=iso19139`. Then add this ISO XML file to the [CGD git repo](https://github.com/NCAR/dash-cgd-prod).
 
