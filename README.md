@@ -60,7 +60,7 @@ Note that these steps take a while, and must be done in order for each dataset, 
 ### Include additional metadata for DASH Search
 1. In order to include a dataset in [DASH Search](https://data.ucar.edu/dataset), the metadata must include a valid title, description, short name, author, publisher (UCAR/NCAR - Climate and Global Dynamics Laboratory), metadata support contact (esg-support@earthsystemgrid.org), resource support contact (esg-support@earthsystemgrid.org), legal constraints, access constraints, and language. If any of these need to be added, please do so in the Climate Data Gateway user interface.
 2. Include GCMD keywords. *****
-3. Add dataset record to DASH search by generating ISO using the following URL: `https://www.earthsystemgrid.org/dataset/<short>.xml?type=iso19139`. Then add this ISO XML file to the [CGD git repo](https://github.com/NCAR/dash-cgd-prod).
+3. Add dataset record to DASH search by generating ISO using the following URL: `https://www.earthsystemgrid.org/dataset/<short>.xml?type=iso19139`. Right click to save the `.xml` file (copying will remove the formatting), then upload this ISO XML file to the [CGD git repo](https://github.com/NCAR/dash-cgd-prod). 
 
 ## Steps for Unpublishing/Republishing Data:
 1. Unpublish the data from Climate Data Gateway.
