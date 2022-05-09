@@ -60,7 +60,8 @@ Note that these steps take a while, and must be done in order for each dataset, 
 ### Include additional metadata for DASH Search
 1. In order to include a dataset in [DASH Search](https://data.ucar.edu/dataset), the metadata must include a valid title, description, short name, author, publisher (UCAR/NCAR - Climate and Global Dynamics Laboratory), metadata support contact (esg-support@earthsystemgrid.org), resource support contact (esg-support@earthsystemgrid.org), legal constraints, access constraints, and language. If any of these need to be added, please do so in the Climate Data Gateway user interface.
 2. Include GCMD keywords. *****
-3. Add dataset record to DASH search by generating ISO using the following URL: `https://www.earthsystemgrid.org/dataset/<short>.xml?type=iso19139`. Right click to save the `.xml` file (copying will remove the formatting), then upload this ISO XML file to the [CGD git repo](https://github.com/NCAR/dash-cgd-prod). 
+3. Add dataset record to DASH search by generating ISO using the following URL: `https://www.earthsystemgrid.org/dataset/<short>.xml?type=iso19139`. Right click to save the `.xml` file (copying will remove the formatting), then upload this ISO XML file to the [CGD git repo](https://github.com/NCAR/dash-cgd-prod).
+4. Error logs and output from the last production job that transferred data from the github repo to DASH are available [here](https://data.ucar.edu/harvest/dash-cgd-prod/job/last) if you have a login. If debugging is needed, there is also a [dev version of WAF](https://github.com/NCAR/dset-web-accessible-folder-dev) where one can upload `.xml` files to a [development version of DASH](https://ckandev.ucar.edu/). [Error logs and output for the dev version](https://ckandev.ucar.edu/harvest/dev-waf/job/last) are also available.
 
 ## Steps for Unpublishing/Republishing Data:
 1. Unpublish the data from Climate Data Gateway.
