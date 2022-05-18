@@ -86,3 +86,8 @@ Note that these steps take a while, and must be done in order for each dataset, 
 There may be an issue with the filepath (eg, make sure your project specific config file points to `/datazone` instead of `/glade`). Try unpublishing and republishing.
 2. The project does not have an option to share with the PI. 
 Try temporarily adding PI as having view permissions on parent dataset.
+3. The files are now labeled as `.nc_0` or some other `.nc_#`, and the NetCDF Header View is no longer working. 
+One way to address this issue with automatic renaming of files due to multiple versions is to "delete", then "api delete from gateway", then "database delete". To do this, use the following steps:
+- `$ esgunpublish --database-delete –project CESM ucar.cgd.cesm2.SHORTNAME.COMP.proc.FREQ.VARIABLE`
+- `$ sh curl_delete_VARIABLE.sh`
+- `$ esgunpublish --database-delete --database-only --project CESM ucar.cgd.cesm2.SHORTNAME.COMP.proc.FREQ.VARIABLE`
