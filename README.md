@@ -1,5 +1,5 @@
 # data-publishing
-## These scripts are for use by the NCAR CGD data publishing team. If you are a PI who would like to publish a dataset on Climate Data Gateway, please submit a [DASH ticket](https://ithelp.ucar.edu/plugins/servlet/desk/site/dash).
+## These scripts are for use by the NCAR CGD data publishing team. If you are a PI who would like to publish a dataset on Climate Data Gateway, please submit a [DASH ticket](https://ithelp.ucar.edu/plugins/servlet/desk/site/dash), and we'll take care of the publishing process for you!
 
 ## Authors:
 - Ilana Stern
