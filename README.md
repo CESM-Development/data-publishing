@@ -23,11 +23,18 @@
       export ESGINI=/usr/local/esg-publisher-config/CESM/LE/<shortname>/config_files/LE/esg-le.ini
       export ESGCESMINI=/usr/local/esg-publisher-config/CESM/LE/<shortname>/config_files/LE/esg-le.CESM.ini
       ```
-2. Next, edit `esg-le.ini` with a tool such as `vi`. Include any missing passwords or secrets (you can reach out to CISL, Eric Nienhouse, or Teagan King for this information). If you need to include a new project, it can be done by changing `project_options`. One can add additional `thredds_dataset_roots` which can help minimize warnings to the console when running publishing scripts. Most of the information in this file should remain constant.
+2. Next, edit `esg-le.ini` with a tool such as `vi`. Include any missing passwords or secrets (you can reach out to CISL, Eric Nienhouse, or Teagan King for this information). If you need change the project, it can be done by changing `project_options`. One can add additional `thredds_dataset_roots` which can help minimize warnings to the console when running publishing scripts. Most of the information in this file should remain constant.
 3. After editing the general configuration file, we can edit the project-specific configuration file, eg `esg-le.CESM.ini`. Be sure that the `project` matches the name that you expect, and the `experiment` matches a shortname given to the specific project you are publishing. The `dataset_id` should follow the format `ucar.cgd.cesm1.<specific_project_name>.%(submodel)s.%(product)s.%(time_frequency)s.%(myvar)s`. The directory_format should be the filepath to the data followed by `%(submodel)s/%(product)s/tseries/%(time_frequency_short)s/`. `experiment_options` should include the project-specific short name (twice). Note that the filepath should be in `/datazone/campaign` or `/datazone/collections` in order to ensure that it accessible for a substantial period of time. Coordinate with the PI and Gary Strand to move the dataset to a more permanent location in `glade/` if it is somewhere such as `/glade/scratch` or `/glade/p/univ`.
 4. Once the configuration files have been loaded, run `source env.sh`. If you log out before finishing publishing, you may need to do this again to make sure `$ESGINI` and `$ESGCESMINI` are recognized.
 
 ### Create a new project, if needed
+This should only be done if you need a new `project` equivalent to CESM, CCSM, AMPS, ARTMIP, etc.
+1. Add project (and additional relevant information that is consistent with the rest of the table formatting) to the table listed at /usr/local/esg-publisher-config/esgcet_models_table.txt
+2. Run `esginitialize -c` in order to reinitialize the esg publisher.
+3. Create a new top level dataset at [https://www.earthsystemgrid.org/root/index.html](https://www.earthsystemgrid.org/root/index.html).
+4. Update the `project` in both `esg-le.ini` and `esg-le.<project_name>.ini`.
+
+### Create a new parent dataset
 1. Navigate to a parent dataset in [Climate Data Gateway](https://www.earthsystemgrid.org/), such as the [CESM2 Model Output](https://www.earthsystemgrid.org/dataset/ucar.cgd.cesm2.output.html).
 2. In the `Edit` tab, `Create New Child Dataset`. Fill in the title of dataset and shortname.
 
