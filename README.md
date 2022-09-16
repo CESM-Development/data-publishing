@@ -30,9 +30,9 @@
 ### Create a new project, if needed
 This should only be done if you need a new `project` equivalent to CESM, CCSM, AMPS, ARTMIP, etc.
 1. Add project (and additional relevant information that is consistent with the rest of the table formatting) to the table listed at /usr/local/esg-publisher-config/esgcet_models_table.txt
-2. Run `esginitialize -c` in order to reinitialize the esg publisher.
-3. Create a new top level dataset at [https://www.earthsystemgrid.org/root/index.html](https://www.earthsystemgrid.org/root/index.html).
-4. Update the `project` in both `esg-le.ini` and `esg-le.<project_name>.ini`.
+2. Update the `project` in both `esg-le.ini` and `esg-le.<project_name>.ini`. Source `env.sh`, ensuring that it is pointing to the correct `esg-le.ini` and `esg-le.<project_name>.ini` files, as this will be used in the next step to determine which projects to reinitialize.
+3. Run `esginitialize -c` in order to reinitialize the esg publisher.
+4. Create a new top level dataset at [https://www.earthsystemgrid.org/root/index.html](https://www.earthsystemgrid.org/root/index.html).
 
 ### Create a new parent dataset
 1. Navigate to a parent dataset in [Climate Data Gateway](https://www.earthsystemgrid.org/), such as the [CESM2 Model Output](https://www.earthsystemgrid.org/dataset/ucar.cgd.cesm2.output.html).
