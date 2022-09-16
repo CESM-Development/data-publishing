@@ -34,6 +34,7 @@ This should only be done if you need a new `project` equivalent to CESM, CCSM, A
 3. Run `esginitialize -c` in order to reinitialize the esg publisher.
 4. Create a new project at [https://www.earthsystemgrid.org/root/index.html](https://www.earthsystemgrid.org/root/index.html).
 5. Create a new top level dataset at [https://www.earthsystemgrid.org/root/index.html](https://www.earthsystemgrid.org/root/index.html), and change the project from 'inherited' to the project name that was created in the previous step.
+6. To confirm that your project was created, you can check that it is listed on the [Projects](https://www.earthsystemgrid.org/project.html) page.
 
 ### Create a new parent dataset
 1. Navigate to a parent dataset in [Climate Data Gateway](https://www.earthsystemgrid.org/), such as the [CESM2 Model Output](https://www.earthsystemgrid.org/dataset/ucar.cgd.cesm2.output.html).
