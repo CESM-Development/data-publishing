@@ -104,3 +104,5 @@ One way to address this issue with automatic renaming of files due to multiple v
     - `$ esgunpublish --database-delete –project CESM ucar.cgd.cesm2.SHORTNAME.COMP.proc.FREQ.VARIABLE`
     - `$ sh curl_delete_VARIABLE.sh` (see section above titled [`Steps for Unpublishing/Republishing Data`](https://github.com/CESM-Development/data-publishing/blob/main/README.md#steps-for-unpublishingrepublishing-data) to see how to generate this script)
     - `$ esgunpublish --database-delete --database-only --project CESM ucar.cgd.cesm2.SHORTNAME.COMP.proc.FREQ.VARIABLE`
+4. NetCDF headers are not showing up, or 404 errors result from trying to download file that is available on /datazone. Why would they not be available?
+There may be an issue with soft links that are created on sagepubprodalma, but not on the TDS virtual machine (for downloading file issue) or not on the esg production instance (for viewing NetCDF headers). Check for missing soft links!
