@@ -1,6 +1,8 @@
 # data-publishing
 ## These scripts are for use by the NCAR CGD data publishing team. If you are a PI who would like to publish a dataset on Climate Data Gateway, please submit a [DASH ticket](https://ithelp.ucar.edu/plugins/servlet/desk/site/dash), and we'll take care of the publishing process for you!
 
+## Note that we are undergoing a transition from the Climate Data Gateway to the RDA as of early 2024, so the processes and scripts in this repository may become obsolete.
+
 ## Authors:
 - Teagan King
 - Ilana Stern
